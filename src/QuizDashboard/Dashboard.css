@@ -1,0 +1,79 @@
+/* Dashboard.css */
+
+.quiz-dashboard {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #3f2b96;
+  margin-bottom: 30px;
+}
+
+/* Quiz styles */
+.quiz-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.question-count {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.question-text {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.answer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.answer-button {
+  background-color: #3f2b96;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.answer-button:hover {
+  background-color: #5d4a9d;
+}
+
+/* Result styles */
+.result-section h2 {
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.score-text {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+.restart-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+}

@@ -1,0 +1,105 @@
+/* src/RegisterForm/Register.css */
+
+/* --- Container Setup (Identical to Login.css) --- */
+.register-container {
+    flex: 1; 
+    padding: 40px;
+    background-color: white; 
+    border-radius: 0 20px 20px 0; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.register-form {
+    background: none;
+    padding: 0;
+    box-shadow: none; 
+    max-width: none;
+    width: 100%;
+}
+
+.register-container h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333; 
+    margin-bottom: 40px; 
+    text-align: left;
+}
+
+/* --- Input Field Styles (Identical to Login.css) --- */
+.form-group {
+    margin-bottom: 25px; 
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500; 
+    color: #555;
+    font-size: 0.95em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #3f2b96; 
+    box-shadow: 0 0 0 3px rgba(63, 43, 150, 0.2); 
+    outline: none; 
+}
+
+/* --- Register Button Styles (Color Change Only) --- */
+.register-button {
+    width: 100%;
+    padding: 14px; 
+    
+    /* Green brand color for registration */
+    background-color: #28a745; 
+    color: white;
+    
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 1.1em; 
+    font-weight: 600;
+    margin-top: 25px; 
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.register-button:hover {
+    background-color: #1e7e34; /* Darker green on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Link Button Styles (Identical to Login.css) --- */
+.link-button {
+    background: none;
+    color: #3f2b96; 
+    border: none;
+    padding: 15px 0 0 0; 
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.link-button:hover {
+    text-decoration: underline; 
+    color: #5d4a9d;
+}

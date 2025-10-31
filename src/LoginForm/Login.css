@@ -1,0 +1,110 @@
+/* src/LoginForm/Login.css */
+
+/* --- Container Setup --- */
+.login-container {
+    /* Use padding to ensure the form has space */
+    /* Updated styling to match the Register component's container structure
+       for a multi-component layout */
+    width: 550px;
+    padding: 40px;
+    background-color: white; 
+    border-radius: 20px ; /* Note the opposite corners for login */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    
+}
+
+.login-form {
+    background: none; /* Removed background color from form itself */
+    padding: 0; /* Removed padding from form itself */
+    box-shadow: none; /* Removed box shadow */
+    max-width: 500px;
+    width: 100%;
+    /* Removed fixed width/height for better responsiveness */
+}
+
+.login-container h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333; 
+    margin-bottom: 40px; 
+    text-align: left;
+}
+
+/* --- Input Field Styles (Updated to match Register.css) --- */
+.form-group {
+    margin-bottom: 25px; /* Increased margin */
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Adjusted margin */
+    font-weight: 500; /* Adjusted weight */
+    color: #555; /* Adjusted color */
+    font-size: 0.95em; /* Adjusted size */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px; /* Increased padding */
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 8px; /* Rounded corners */
+    box-sizing: border-box; 
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #3f2b96; /* Focus color from Register.css */
+    box-shadow: 0 0 0 3px rgba(63, 43, 150, 0.2); /* Focus shadow */
+    outline: none; 
+}
+
+
+/* --- Login Button Styles (Updated to match Register.css structure) --- */
+.login-button {
+    width: 100%;
+    padding: 14px; /* Increased padding */
+    
+    background-color: #3f2b96; /* Primary brand color for login */
+    color: white;
+    
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 1.1em; /* Increased font size */
+    font-weight: 600;
+    margin-top: 25px; /* Adjusted margin */
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.login-button:hover {
+    background-color: #5d4a9d; /* Darker primary on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Link Button Styles (Copied from Register.css for consistency) --- */
+.link-button {
+    background: none;
+    color: #3f2b96; 
+    border: none;
+    padding: 15px 0 0 0; 
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.link-button:hover {
+    text-decoration: underline; 
+    color: #5d4a9d;
+}
