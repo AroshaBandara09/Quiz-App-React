@@ -1,73 +1,70 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import "./Login.css";
-
-// 1. Define the default credentials here
-const VALID_EMAIL = "test@quizapp.com";
-const VALID_PASSWORD = "quiz123";
+import styles from "./Login.module.css";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faSignIn } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError("");
-    if (email === VALID_EMAIL && password === VALID_PASSWORD) {
-      console.log("Login successful!");
-      navigate("/dashboard");
-    } else {
-      console.error("Login failed: Invalid credentials");
-      setError(
-        `Invalid email or password. Try ${VALID_EMAIL} / ${VALID_PASSWORD}`
-      );
-    }
-  };
-
-  const handleRegister = (e) => {
-    navigate("/register");
-  };
+  const [activeTab, setActiveTab] = useState("login");
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Sign In</h2>
+    <div className={styles.mainContainer}>
+      <div className={styles.loginContainer}>
+        <h2>Quiz Buddy</h2>
 
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+        <p className={styles.descriptionText}>
+          Ready to challenge your mind? Sign in or create an account to start
+          your quiz journey with Quiz Buddy!
+        </p>
+
+        <hr />
+
+        <div className={styles.loginBar}>
+          <span
+            className={`${styles.tab} ${
+              activeTab === "login" ? styles.active : ""
+            }`}
+            onClick={() => setActiveTab("login")}
+          >
+            <FontAwesomeIcon icon={faUser} className={styles.fontIcon} />
+            Login
+          </span>
+          <span
+            className={`${styles.tab} ${
+              activeTab === "register" ? styles.active : ""
+            }`}
+            onClick={() => setActiveTab("register")}
+          >
+            <FontAwesomeIcon icon={faUserPlus} className={styles.fontIcon} />
+            Register
+          </span>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+        <div className={styles.formContainer}>
+          {activeTab === "login" ? (
+            <form className={styles.form}>
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
+              <button type="submit">
+                <FontAwesomeIcon icon={faSignIn} className={styles.fontIcon} />
+                Login
+              </button>
+            </form>
+          ) : (
+            <form className={styles.form}>
+              <input type="text" placeholder="Username" required />
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
+              <input type="number" placeholder="Age" required />
+              <button type="submit">
+                <FontAwesomeIcon icon={faSignIn} className={styles.fontIcon} />
+                Register
+              </button>
+            </form>
+          )}
         </div>
-
-        {/* Display Error Message if present */}
-        {error && <p className="error-message">{error}</p>}
-
-        <button type="submit" className="login-button">
-          Login
-        </button>
-      </form>
-
-      <button className="link-button" onClick={handleRegister}>
-        Don't have an account? Register here.
-      </button>
+      </div>
     </div>
   );
 }
