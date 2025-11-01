@@ -4,9 +4,21 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faSignIn } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useRef } from "react";
 
 function Login() {
   const [activeTab, setActiveTab] = useState("login");
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const formContainer = formRef.current;
+    if (formContainer) {
+      const activeForm = formContainer.querySelector(`.${styles.show} form`);
+      if (activeForm) {
+        formContainer.style.height = `${activeForm.scrollHeight}px`;
+      }
+    }
+  }, [activeTab]);
 
   return (
     <div className={styles.mainContainer}>
@@ -41,8 +53,12 @@ function Login() {
           </span>
         </div>
 
-        <div className={styles.formContainer}>
-          {activeTab === "login" ? (
+        <div className={styles.formContainer} ref={formRef}>
+          <div
+            className={`${styles.formTransition} ${
+              activeTab === "login" ? styles.show : styles.hide
+            }`}
+          >
             <form className={styles.form}>
               <input type="email" placeholder="Email" required />
               <input type="password" placeholder="Password" required />
@@ -51,7 +67,13 @@ function Login() {
                 Login
               </button>
             </form>
-          ) : (
+          </div>
+
+          <div
+            className={`${styles.formTransition} ${
+              activeTab === "register" ? styles.show : styles.hide
+            }`}
+          >
             <form className={styles.form}>
               <input type="text" placeholder="Username" required />
               <input type="email" placeholder="Email" required />
@@ -62,7 +84,7 @@ function Login() {
                 Register
               </button>
             </form>
-          )}
+          </div>
         </div>
       </div>
     </div>

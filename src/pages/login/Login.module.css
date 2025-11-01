@@ -61,12 +61,6 @@ body{
   font-weight: 600;
 }
 
-/* Forms */
-.formContainer {
-  display: flex;
-  justify-content: center;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -103,7 +97,7 @@ body{
 }
 
 .fontIcon {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .descriptionText {
@@ -121,4 +115,33 @@ hr {
   border: none;
   border-top: 2px solid lightgray;
   margin: 25px auto;
+}
+
+.formContainer {
+  position: relative;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out;
+}
+
+.formTransition {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
 }
