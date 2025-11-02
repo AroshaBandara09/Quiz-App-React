@@ -1,6 +1,6 @@
 import styles from "./QuizBox.module.css";
 
-function QuizBox({ title, description }) {
+function QuizBox({ title, description, questionCount }) {
   return (
     <div className={styles.quizBox}>
       <div className={styles.innerContainer}>
@@ -14,6 +14,9 @@ function QuizBox({ title, description }) {
         <div className={styles.detailsContainer}>
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.description}>{description}</p>
+          <span className={styles.questionCount}>
+            {questionCount} {questionCount > 1 ? "Questions" : "Question"}
+          </span>
         </div>
       </div>
     </div>
