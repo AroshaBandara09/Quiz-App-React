@@ -62,13 +62,14 @@ body {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
-/* Right side details */
 .detailsContainer {
   flex: 1;
   margin-left: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  position: relative; /* allows positioning of the badge */
+  height: 100%;
 }
 
 .title {
@@ -108,4 +109,34 @@ body {
 
 .quizListContainer::-webkit-scrollbar {
   display: none;
+}
+
+.footer {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.questionCount {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #777;
+  background-color: #f0f0f0;
+  padding: 3px 8px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.questionCount {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+  background-color: #f0f0f0;
+  padding: 3px 8px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
