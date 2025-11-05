@@ -1,6 +1,6 @@
 import styles from "./QuestionList.module.css";
 
-function QuestionBox({ title, description, questionCount }) {
+function QuestionBox({ topic, name }) {
   return (
     <div className={styles.quizBox}>
       <div className={styles.innerContainer}>
@@ -8,15 +8,12 @@ function QuestionBox({ title, description, questionCount }) {
           <img
             className={styles.logoImage}
             src="https://www.transparentpng.com/download/math/12lFHl-lac-math-classes.png"
-            alt="mathImage"
+            alt="quiz topic"
           />
         </div>
         <div className={styles.detailsContainer}>
-          <h2 className={styles.title}>{title}</h2>
-          <p className={styles.description}>{description}</p>
-          <span className={styles.questionCount}>
-            {questionCount} {questionCount > 1 ? "Questions" : "Question"}
-          </span>
+          <h2 className={styles.title}>{name}</h2>
+          <span className={styles.questionCount}>{topic}</span>
         </div>
       </div>
     </div>

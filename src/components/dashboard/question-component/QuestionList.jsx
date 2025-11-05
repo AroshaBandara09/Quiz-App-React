@@ -32,12 +32,7 @@ function QuestionList() {
     <div className={styles.quizListContainer}>
       <NewQuestion />
       {questions.map((quiz) => (
-        <QuestionBox
-          key={quiz.id}
-          title={quiz.name}
-          description={quiz.description}
-          questionCount={quiz.questionCount}
-        />
+        <QuestionBox key={quiz.id} name={quiz.name} topic={quiz.topic} />
       ))}
     </div>
   );
