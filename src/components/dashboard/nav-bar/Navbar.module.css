@@ -1,0 +1,91 @@
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.companyName h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.searchContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.searchBar {
+  width: 80%;
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #f8f8f8;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.searchBar:focus {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.profileName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+
+.logoutButton {
+  padding: 6px 15px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: #e53935;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #c62828;
+}
