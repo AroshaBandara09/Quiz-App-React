@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./QuizForm.css"; // For custom styling
+import './quiz-form.css';
+
 
 const QuizForm = () => {
   const [quizName, setQuizName] = useState("");
