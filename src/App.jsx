@@ -20,7 +20,7 @@ function App() {
           }
         />
         
-        <Route path="/quiz-form" element={<QuizForm />} />
+        <Route path="/QuizForm" element={<QuizForm />} />
       </Routes>
     </>
   );
