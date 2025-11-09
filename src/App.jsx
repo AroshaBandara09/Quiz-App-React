@@ -4,6 +4,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Navbar from "./components/dashboard/nav-bar/Navbar";
 
 import QuizForm from "./components/quiz-form/QuizForm";
+import QuizCard from "./components/quiz-card/QuizCard";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         />
         
         <Route path="/QuizForm" element={<QuizForm />} />
+        <Route path="/QuizCard" element={<QuizCard />} />
       </Routes>
     </>
   );
