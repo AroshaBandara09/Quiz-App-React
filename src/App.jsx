@@ -5,6 +5,7 @@ import Navbar from "./components/dashboard/nav-bar/Navbar";
 
 import QuizForm from "./components/quiz-form/QuizForm";
 import QuizCard from "./components/quiz-card/QuizCard";
+import QuestionCard from "./components/question-card/QuestionCard";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         
         <Route path="/QuizForm" element={<QuizForm />} />
         <Route path="/QuizCard" element={<QuizCard />} />
+        <Route path="/QuestionCard" element={<QuestionCard />} />
+        
       </Routes>
     </>
   );
