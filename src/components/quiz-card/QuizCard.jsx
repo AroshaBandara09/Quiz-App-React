@@ -1,22 +1,49 @@
 import React from 'react';
-import './QuizCard.css'; // Ensure you have a corresponding CSS file for styles
+import './QuizCard.css'; // Import the CSS file for styles
 
 const QuizCard = ({ quizName, questions, topic, time, type, numberOfQuestions, onUpdate, onDelete, onComplete }) => {
   return (
     <div className="quiz-card">
-      <h2 className="quiz-name">{quizName}</h2>
-      <div className="quiz-details">
-        <p><strong>Question List:</strong> {questions}</p>
-        <p><strong>Topic:</strong> {topic}</p>
-        <p><strong>Time:</strong> {time}</p>
-        <p><strong>Type:</strong> {type}</p>
-        <p><strong>Number of Questions:</strong> {numberOfQuestions}</p>
+      {/* Header */}
+      <div className="quiz-card__header">
+        <h2 className="quiz-card__quiz-name">{quizName}</h2>
+        <p className="quiz-card__topic">{topic}</p>
       </div>
-      <div className="button-container">
-        <button className="update-btn" onClick={onUpdate}>Update</button>
-        <button className="delete-btn" onClick={onDelete}>Delete</button>
-        <button className="compete-btn" onClick={onComplete}>Compete</button>
+
+      {/* Details Section */}
+      <div className="quiz-card__details">
+        <div className="quiz-card__details-item">
+          <div className="quiz-card__label">Questions</div>
+          <p className="quiz-card__text">{questions}</p>
+        </div>
+        <div className="quiz-card__details-item">
+          <div className="quiz-card__label">Duration</div>
+          <p className="quiz-card__text">{time}</p>
+        </div>
+        <div className="quiz-card__details-item">
+          <div className="quiz-card__label">Type</div>
+          <p className="quiz-card__text">{type}</p>
+        </div>
+        <div className="quiz-card__total">
+          <div className="quiz-card__label">Total Questions</div>
+          <p className="quiz-card__total-count">{numberOfQuestions}</p>
+        </div>
       </div>
+
+      {/* Action Buttons */}
+      <div className="quiz-card__actions">
+        <button onClick={onUpdate} className="quiz-card__button quiz-card__button--update">
+          Update
+        </button>
+        <button onClick={onDelete} className="quiz-card__button quiz-card__button--delete">
+          Delete
+        </button>
+      </div>
+
+      {/* Start Quiz Button */}
+      <button onClick={onComplete} className="quiz-card__button quiz-card__button--start">
+        Start Quiz
+      </button>
     </div>
   );
 };
